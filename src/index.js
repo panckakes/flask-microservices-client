@@ -59,6 +59,12 @@ class App extends Component {
             <UsersList users={ this.state.users }/>
           </div>
         </div>
+        <div className="col-md-6">
+          <br/>
+          <h1>Bluetooth Devices</h1>
+          <hr/><br/>
+          <BluetoothList bluetooth={ this.state.bluetooth }/>
+        </div>
       </div>
     )
   }
