@@ -4,7 +4,7 @@ const NavioTemperature = (props) => {
   return (
     <div>
       {
-        props.users.map((naviotemperature) => {
+        props.naviotemperature.map((naviotemperature) => {
           return <h4 key={ naviotemperature.id } className="well">
             <strong>{ naviotemperature.temp }</strong> -
             <em>{naviotemperature.created_at}</em></h4>
