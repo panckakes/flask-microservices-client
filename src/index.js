@@ -32,8 +32,8 @@ class App extends Component {
     .catch((err) => { console.log(err); })
   }
   getTemerature() {
-    axios.get(`${process.env.REACT_APP_NAVIO_TEMPERATURE_SERVICE_URL}/api/v1/query?query=navio_barometer_temp`)
-    .then((res) => { this.setState({naviotemperature: res.data.data.temperature }); })
+    axios.get(`http://127.0.0.1:9090/api/v1/query?query=navio_barometer_temp`)
+    .then((res) => { this.setState({naviotemperature: res.data.data.naviotemperature }); })
     .catch((err) => { console.log(err); })
     // axios({
     //   method:'get',
@@ -86,6 +86,11 @@ class App extends Component {
             <h1>Bluetooth Devices</h1>
             <hr/><br/>
             <BluetoothList bluetooth={ this.state.bluetooth }/>
+          </div>
+          <div className="col-md-6">
+            <br/>
+            <h1>Current Temp</h1>
+            <NavioTemperature naviotemperature={this.state.bluetooth } />
           </div>
       </div>
     )
